@@ -11,7 +11,7 @@ docker compose build
 docker compose up -d
 ```
 
-기본 호스트명은 `simprobs.cubus.sh`다. 다른 호스트명을 쓸 때는 `SIMPROBS_HOST` 환경 변수를 지정한다. Cloudflare Tunnel에서 해당 호스트명을 `nginx-proxy:80`으로 보내는 경로는 인프라 설정에서 별도로 연결해야 한다.
+기본 호스트명은 `simprob.cubus.sh`다. 다른 호스트명을 쓸 때는 `SIMPROBS_HOST` 환경 변수를 지정한다. Cloudflare Tunnel에서 해당 호스트명을 `nginx-proxy:80`으로 보내는 경로는 인프라 설정에서 별도로 연결해야 한다.
 
 ## 생성 파일
 

@@ -4,8 +4,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV PUPPETEER_SKIP_DOWNLOAD=true
 WORKDIR /site
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends chromium fonts-noto-cjk poppler-utils \
+RUN apt update \
+    && apt install -y --no-install-recommends chromium fonts-noto-cjk poppler-utils \
     && rm -rf /var/lib/apt/lists/*
 
 COPY package.json package-lock.json ./
@@ -19,7 +19,7 @@ RUN npm run build
 
 FROM nginx:stable-alpine AS runtime
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY conf/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /site/dist/ /usr/share/nginx/html/
 
 EXPOSE 80

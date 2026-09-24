@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     environment:
-      VIRTUAL_HOST: ${SIMPROBS_HOST:-simprobs.cubus.sh}
+      VIRTUAL_HOST: ${SIMPROBS_HOST:-simprob.cubus.sh}
       VIRTUAL_PORT: "80"
     expose:
       - "80"
