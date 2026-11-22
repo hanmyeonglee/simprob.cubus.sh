@@ -17,7 +17,7 @@ COPY problems ./problems
 COPY answers ./answers
 RUN npm run build
 
-FROM nginx:stable-alpine AS runtime
+FROM nginx:1.30.7-alpine3.24 AS runtime
 
 COPY conf/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /site/dist/ /usr/share/nginx/html/
