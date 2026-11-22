@@ -1,7 +1,7 @@
 services:
   simprobs:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    extends:
+      file: compose.service.yml
+      service: simprobs
     ports:
       - "127.0.0.1:8080:80"
